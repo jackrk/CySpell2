@@ -2,7 +2,7 @@
 
 require_once 'sdk/facebook.php';
 
-$config = array('appId' => '249696895179837', 'secret' => '446a84044156109ba1f39d09954c73b9');
+$config = array('appId' => '596306923770003', 'secret' => 'c2decb0b36cbe7b0cf536ec8265db9ab');
 $facebook = new Facebook($config);
 $uid = $facebook->getUser();
 $user_profile = $facebook->api('/me','GET');
@@ -75,9 +75,9 @@ $user_profile = $facebook->api('/me','GET');
 		<script>
 			window.fbAsyncInit = function() {
 				FB.init({
-					appId : '249696895179837', // App ID
+					appId : '596306923770003', // App ID
 					oauth : true,
-					channelUrl : '//local.cyspell.com/channel.html', // Channel File
+					channelUrl : '//localhost/channel.html', // Channel File
 					status : true, // check login status
 					cookie : true, // enable cookies to allow the server to access the session
 					xfbml : true // parse XFBML
