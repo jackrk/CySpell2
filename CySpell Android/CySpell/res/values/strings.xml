@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CyLearn</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_choose_grade">ChooseGrade</string>
+    <string name="title_activity_start_exercise">StartExercise</string>
+    <string name="title_activity_exercise_run">ExerciseRun</string>
+    <string name="title_activity_end_game">EndGame</string>
+
+    <string-array name="numberquestions">
+        <item> 5 </item>
+        <item>7	</item>
+        <item>10	</item>
+        <item>12	</item>
+        <item>15	</item>
+    </string-array>
+</resources>
