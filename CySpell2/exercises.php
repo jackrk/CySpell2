@@ -20,7 +20,7 @@ $i = 0;
 foreach($results as $row){
 	$check1 = $row['grade'];
 	if($grade == $row['grade']){
-		$arr[$i] = array("picture" => $row['picture'], "answer" => $row['answer']);
+		$arr[$i] = array("picture" => $row['picture'], "answer" => $row['answer'], "sentence" => $row['sentence']);
 		$i++;
 	}	
 }
@@ -30,6 +30,7 @@ if($problems >= 0) {
 $id = rand(0, count($arr));
 $picture =  $arr[$id]['picture'];
 $answer =  $arr[$id]['answer'];
+$sentence = $arr[$id]['sentence'];
 echo <<<EOHTML
 <html>
 <head>
@@ -76,7 +77,7 @@ $(document).ready(function(){
 <br/>
 <div class="exercisetext">$problems exercises left.</div>
 <img src="$picture"  width="304" height="228"></img>
-<span class="exercisetext">What is this?</span>
+<span class="exercisetext">$sentence</span>
 <form action="" method="post">
 	<input type="hidden" name="problems" value="$problems">
 	<input type="hidden" name="grade" value=$grade>
@@ -116,10 +117,7 @@ $(document).ready(function() {
 EOHTML;
 echo '
 <form action="FlashCards.php" method="post">';
-	foreach($arr as $val)
-	{
-		echo '<input type="hidden" name="arr[][picture]" value='; echo $val['picture']; echo '>';
-	}
+	echo '<input type="hidden" name="grade" value='; echo $grade; echo '>';
 	echo '<input class="cylink" style="display: block; margin: 0 auto;" type="submit" value="Show FlashCards!">
 </form>
 
