@@ -111,7 +111,7 @@ $(document).ready(function() {
 </head>
 <body>
 <h1 class="maintitle"><img src="images/Cy-Spell-Logo.png"></h1>
-<a class="cylink" href="main.php">Home</a><br/><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/><br/>
 EOHTML;
 echo '
 <form action="MathFlashCards.php" method="post">';
