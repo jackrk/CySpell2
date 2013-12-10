@@ -27,7 +27,7 @@ foreach($results as $row){
 
 if($problems >= 0) {
 // Get a new picture and answer
-$id = rand(0, count($arr));
+$id = rand(0, count($arr)-1);
 $picture =  $arr[$id]['picture'];
 $answer =  $arr[$id]['answer'];
 echo <<<EOHTML
@@ -72,11 +72,10 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<a class="cylink" href="main.php">Home</a><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/>
 <br/>
 <div class="exercisetext">$problems exercises left.</div>
-<img src="$picture"  width="304" height="228"></img>
-<span class="exercisetext">$sentence</span>
+<img src="$picture"  width="204" height="228"></img>
 <form action="" method="post">
 	<input type="hidden" name="problems" value="$problems">
 	<input type="hidden" name="grade" value=$grade>

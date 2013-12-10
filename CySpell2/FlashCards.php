@@ -43,7 +43,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<a class="cylink" href="main.php">Home</a><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/>
 EOHTML;
 
 foreach($arr as $array){

@@ -8,7 +8,7 @@ $grade = $_GET['grade'];
 		<script src="js/jquery.transit.min.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#submitword').bind('mouseenter', function() {
+				$('.submit').bind('mouseenter', function() {
 					$(this).transition({
 						backgroundColor : 'yellow',
 						color : 'red',
@@ -90,7 +90,7 @@ $grade = $_GET['grade'];
 			</div>
 			<div style="color: red; font-size: 30px; font-family: helvetica; top: -40px; position: relative;" >Problems </div>
 			<br>
-			<input id="submitword" style="display: block; margin: 0 auto;" type="submit" value="Start Spelling Quiz!">
+			<input id="submitword" class="submit" style="display: block; margin: 0 auto;" type="submit" value="Start Spelling Quiz!">
 		</form>
 		<form action="MathExercises.php" method="post">
 			<input type="hidden" name="grade" value=<?php echo $grade; ?>>
@@ -125,7 +125,7 @@ $grade = $_GET['grade'];
 			</div>
 			<div style="color: red; font-size: 30px; font-family: helvetica; top: -40px; position: relative;" >Problems </div>
 			<br>
-			<input id="submitword" style="display: block; margin: 0 auto;" type="submit" value="Start Math Quiz!">
+			<input id="submitword" class="submit" style="display: block; margin: 0 auto;" type="submit" value="Start Math Quiz!">
 		</form>
 	</body>
 </html>

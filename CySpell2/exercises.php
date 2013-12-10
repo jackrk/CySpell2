@@ -20,14 +20,14 @@ $i = 0;
 foreach($results as $row){
 	$check1 = $row['grade'];
 	if($grade == $row['grade']){
-		$arr[$i] = array("picture" => $row['picture'], "answer" => $row['answer'], "sentence" => $row['sentence']);
+		$arr[$i] = array("picture" => $row['picture'], "answer" => $row['answer'], "sentence" => str_replace("&", " ______ ", $row['sentence']));
 		$i++;
 	}	
 }
 
 if($problems >= 0) {
 // Get a new picture and answer
-$id = rand(0, count($arr));
+$id = rand(0, count($arr)-1);
 $picture =  $arr[$id]['picture'];
 $answer =  $arr[$id]['answer'];
 $sentence = $arr[$id]['sentence'];
@@ -73,7 +73,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<a class="cylink" href="main.php">Home</a><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/>
 <br/>
 <div class="exercisetext">$problems exercises left.</div>
 <img src="$picture"  width="304" height="228"></img>
@@ -113,7 +113,7 @@ $(document).ready(function() {
 </head>
 <body>
 <h1 class="maintitle"><img src="images/Cy-Spell-Logo.png"></h1>
-<a class="cylink" href="main.php">Home</a><br/><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/><br/>
 EOHTML;
 echo '
 <form action="FlashCards.php" method="post">';

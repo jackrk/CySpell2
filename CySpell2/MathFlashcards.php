@@ -48,7 +48,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<a class="cylink" href="main.php">Home</a><br/>
+<a class="cylink" href="mainfb.php">Home</a><br/>
 EOHTML;
 
 foreach($arr as $array){
@@ -57,8 +57,8 @@ foreach($arr as $array){
 	echo'
 	<br/>
 	<img class="flashpic" title="Click to see the answer!!" style="cursor: pointer; z-index: 3; align: middle; margin: 0 auto;" src='; echo $picture;
-	echo' width="304" height="228">
-	<div class="flashanswer" style="cursor: pointer; color: red; opacity: 0; align: middle; margin: 0 auto; font-size: 30px; position: relative; top: -106px;">'; echo $answer; echo'</div>
+	echo' width="170" height="228">
+	<div class="flashanswer" style="cursor: pointer; color: red; opacity: 0; align: middle; margin: 0 auto; font-size: 60px; position: relative; top: -106px; z-index: -1">'; echo $answer; echo'</div>
 	<br/>
 	';
 }
