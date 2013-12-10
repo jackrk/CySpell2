@@ -16,8 +16,7 @@
         android:layout_above="@+id/submit"
         android:layout_alignLeft="@+id/answer"
         android:layout_alignRight="@+id/submit"
-        android:layout_below="@+id/yourAnswer"
-        android:src="@drawable/apple" />
+        android:layout_below="@+id/yourAnswer" />
 
     <Button
         android:id="@+id/submit"

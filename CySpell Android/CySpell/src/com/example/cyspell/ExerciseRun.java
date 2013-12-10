@@ -28,9 +28,10 @@ public class ExerciseRun extends Activity {
 	Integer x = 1;
 	String userAnswerRaw;
 	Button results;
-	int[] arr = new int[15];
+	int[] arr = new int[11];
 	Integer score = 0;
 	String correctAns;
+	Integer correctAnsMath;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class ExerciseRun extends Activity {
 		
 		questionLabel.setText(("Question " + x.toString() + " of " + numberOfGameQuestions.toString() + ":" )); 
 
-		for(int i = 0; i<15; i++)
+		for(int i = 1; i<11; i++)
 		{
 			arr[i] = i;
 		}
@@ -80,17 +81,37 @@ public class ExerciseRun extends Activity {
 		
 		userAnswerRaw = answer.getText().toString();
 		
-		if(userAnswerRaw.contentEquals(correctAns))
+		if(gameType.contentEquals("spelling"))
 		{
-			score++;
-			questionLabel.setText(("CORRECT ANSWER!  Score:" + score.toString() +" / " + x.toString()));
+			if(userAnswerRaw.contentEquals(correctAns))
+			{
+				score++;
+				questionLabel.setText(("CORRECT ANSWER!  Score: " + score.toString() +" / " + x.toString()));
+			}
+			else
+			{
+				questionLabel.setText(("Sorry that was wrong.  Score: " + score.toString() +" / " + x.toString()));
+			}
+			
+			correctAnswer.setText(correctAns);
 		}
-		else
+			
+		if(gameType.contentEquals("math"))
 		{
-			questionLabel.setText(("Sorry that was wrong.  Score: " + score.toString() +" / " + x.toString()));
+			if(Integer.parseInt(userAnswerRaw.toString()) == correctAnsMath)
+			{
+				score++;
+				questionLabel.setText(("CORRECT ANSWER!  Score: " + score.toString() +" / " + x.toString()));
+			}
+			else
+			{
+				questionLabel.setText(("Sorry that was wrong.  Score: " + score.toString() +" / " + x.toString()));
+			}
+			
+			correctAnswer.setText(correctAnsMath.toString());
 		}
 		
-		correctAnswer.setText(correctAns);
+
 		correctAnswer.setVisibility(View.VISIBLE);
 		yourAnswer.setText(userAnswerRaw);
 		yourAnswer.setVisibility(View.VISIBLE);
@@ -101,7 +122,7 @@ public class ExerciseRun extends Activity {
 		x++;
 		
 		//Once user has answered all the questions in the game
-		if( x == numberOfGameQuestions)
+		if( x == numberOfGameQuestions+1)
 		{
 			results.setVisibility(View.VISIBLE);
 			submit.setVisibility(View.GONE);
@@ -120,7 +141,7 @@ public class ExerciseRun extends Activity {
 		yourAnswer.setVisibility(View.GONE);
 		nextQuestion.setVisibility(View.GONE);
 		answer.setVisibility(View.VISIBLE);
-		questionLabel.setText(("Question " + x.toString() + "of " + numberOfGameQuestions.toString() + ":" ));
+		questionLabel.setText(("Question " + x.toString() + " of " + numberOfGameQuestions.toString() + ":" ));
 		submit.setVisibility(View.VISIBLE);
 	}
 	
@@ -129,91 +150,173 @@ public class ExerciseRun extends Activity {
 		switch(arr[x])
 		{
 		case 0:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.apple);
 			correctAns = "apple";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.addfivetwo);
+				correctAnsMath = 7;
+			}
 			break;
 			
 		case 1:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.bell);
 			correctAns = "bell";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.addninetwo);
+				correctAnsMath = 11;
+			}
 			break;
 			
 		case 2:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.blue);
 			correctAns = "blue";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.addsevennine);
+				correctAnsMath = 16;
+			}
 			break;
 			
 		case 3:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.car);
 			correctAns = "car";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.addsixfour);
+				correctAnsMath = 10;
+			}
 			break;
 			
 		case 4: 
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.cat);
 			correctAns = "cat";
-			break;
+			}
+			else
+			{
+				image.setImageResource(R.drawable.divide153);
+				correctAnsMath = 5;
+			}
 			
 		case 5:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.dog);
 			correctAns = "dog";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.divide244);
+				correctAnsMath = 6;
+			}
 			break;
 			
 		case 6:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.egg);
 			correctAns = "egg";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.divide248);
+				correctAnsMath = 3;
+			}
 			break;
 			
 		case 7:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.eye);
 			correctAns = "eye";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.divide426);
+				correctAnsMath = 7;
+			}
 			break;
 			
 		case 8:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.fly);
 			correctAns = "fly";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.mul107);
+				correctAnsMath = 70;
+			}
 			break;
 			
 		case 9:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.horse);
 			correctAns = "horse";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.mul25);
+				correctAnsMath = 10;
+			}
 			break;
 			
 		case 10:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.house);
 			correctAns = "house";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.mul61);
+				correctAnsMath = 6;
+			}
 			break;
 			
 		case 11:
+			if(gameType.contentEquals("spelling"))
+			{
 			image.setImageResource(R.drawable.orange);
 			correctAns = "orange";
+			}
+			else
+			{
+				image.setImageResource(R.drawable.mul62);
+				correctAnsMath = 12;
+			}
 			break;
-			
-		case 12:
-			image.setImageResource(R.drawable.red);
-			correctAns = "red";
-			
-			break;
-			
-		case 13:
-			image.setImageResource(R.drawable.sun);
-			correctAns = "sun";
-			break;
-			
-		case 14:
-			image.setImageResource(R.drawable.facebook1);
-			correctAns = "facebook";
-			break;
-			
-		case 15:
-			image.setImageResource(R.drawable.first);
-			correctAns = "first";
-			break;
-			
+		
 		}
 	}
 	
 	
-	
+	public void showResults(View view)
+	{
+		Intent grade = new Intent(ExerciseRun.this, EndGame.class);
+		grade.putExtra("gameType", gameType);
+		grade.putExtra("gradeLevel", "kindergarten");
+		grade.putExtra("score", score);
+		grade.putExtra("numberOfQuestions", numberOfGameQuestions);
+		startActivity(grade);	
+	}
 	
 	
 	 static void shuffleArray(int[] ar)

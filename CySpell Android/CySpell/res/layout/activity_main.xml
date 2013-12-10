@@ -9,69 +9,35 @@
     tools:context=".MainActivity"
     android:background="@drawable/cyspell" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <ImageButton
+        android:id="@+id/mathGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="79dp"
-        android:text="Start a new game: "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:src="@drawable/mathgame"
+        android:text="Math Game" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <ImageButton
+        android:id="@+id/spelling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="98dp"
-        android:text="Previous Game Scores:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/previousGame1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginTop="36dp"
-        android:text="Score: 8/10.  Game Type: Spelling"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/previousGame3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/previousGame1"
-        android:layout_below="@+id/previousGame1"
-        android:text="Score: 8/10.  Game Type: Spelling"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/previousGame2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/previousGame3"
-        android:layout_below="@+id/previousGame3"
-        android:text="Score: 8/10.  Game Type: Spelling"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/mathGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView1"
-        android:text="Math Game" />
-
-    <Button
-        android:id="@+id/spelling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/mathGame"
         android:layout_below="@+id/mathGame"
+        android:src="@drawable/spellingbee"
         android:text="Spelling Game" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mathGame"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:text="Start a new game: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
